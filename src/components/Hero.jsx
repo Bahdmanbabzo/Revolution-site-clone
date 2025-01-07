@@ -4,8 +4,11 @@ import { useEffect } from "react"
 
 export default function Hero() {
     useEffect(() => {
-        animate(".roll-in", {y:"0%"}, {delay: stagger(0.2), ease:"easeInOut", type:"spring", stiffness:60, damping:10})
-        // animate("img", {scale: [0.5,1], x: "0%"}, {delay: stagger(0.2), ease:"easeInOut", type:"spring", stiffness:60, damping:10})
+        const sequence = [
+            [".roll-in", { y: "0%" }, { delay: stagger(0.2), ease: "easeInOut", type: "spring", stiffness: 60, damping: 10 }],
+            ["img", { x:"0%", scale:1}, { delay: stagger(0.2), ease: "easeInOut", type: "spring", stiffness: 20, damping: 10 }]
+        ]
+        animate(sequence)
     },[])
     return(
         <div className="h-screen w-screen grid place-items-center bg-[#E4E3E2]">
@@ -19,10 +22,10 @@ export default function Hero() {
                     <motion.p initial={{y:"100%"}} className="h-full w-full roll-in font-Silkscreen text-6xl font-extrabold ">Lorem.</motion.p>
                 </div>
             </section>
-            <section className="absolute bottom-0 right-0 flex h-20 gap-2 m-5 overflow-hidden">
-                <motion.img initial={{scale:0, x:"100%"}}  className="h-full w-1/3 img-slide rounded-lg" src="/augustus3.png" alt="" />
-                <motion.img initial={{scale:0, x:"100%"}}  className="h-full w-1/3 img-slide rounded-lg" src="/Las-Medulas,-Spain.jpg" alt="" />
-                <motion.img initial={{scale:0, x:"100%"}}  className="h-full w-1/3 img-slide rounded-lg" src="/Vatnajokull-Iceland.jpg" alt="" />
+            <section className="absolute bottom-0 right-0 flex h-20 gap-2 m-5 overflow-hidden p-2 w-1/4">
+                <motion.img initial={{scale:0, x:"500%"}}  className="h-full w-1/3 img-slide rounded-lg" src="/augustus3.png" alt="" />
+                <motion.img initial={{ x:"500%"}}  className="h-full w-1/3 img-slide rounded-lg" src="/Las-Medulas,-Spain.jpg" alt="" />
+                <motion.img initial={{ x:"500%"}}  className="h-full w-1/3 img-slide rounded-lg" src="/Vatnajokull-Iceland.jpg" alt="" />
 
             </section>
         </div>
