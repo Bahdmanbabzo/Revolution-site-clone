@@ -1,7 +1,6 @@
 import { motion } from "motion/react"
 import { animate, stagger } from "motion"
-import { useEffect, useState,useRef } from "react"
-import Info from "./Info";
+import { useEffect } from "react"
 
 export default function Hero() {
     useEffect(() => {
