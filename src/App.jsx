@@ -5,12 +5,18 @@ import Info from "./components/Info"
 
 export default function App() {
   const [render, setRender] = useState(null);
+  const firstRef = useRef();
+  function animateHover(newState) {
+    setRender(newState); 
+
+  }
   return (
     <div className="relative"> 
       <Hero/>
       <section className="absolute bottom-0 right-0 flex h-20 gap-2 m-5 overflow-hidden p-2 w-1/4">
         <motion.img 
-            onHoverStart={()=> setRender(1)} 
+            whileHover={() => setRender(1) }
+            ref={firstRef}
             initial={{scale:0, x:"400%"}}  
             className="h-full w-1/3 img-slide rounded-lg" 
             src="/augustus3.png" 
