@@ -9,6 +9,7 @@ export default function Info({id}) {
             id:2, 
             image_path:"/Las-Medulas,-Spain.jpg",
         }
+        
 
     ]
     return(
