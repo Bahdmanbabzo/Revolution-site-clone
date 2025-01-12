@@ -23,6 +23,15 @@ export default function ImageCards() {
             {duration:0.5, ease:"easeInOut", type:"tween"}
         )
     }
+    function handleClick(id) {
+        animate(
+            `#${id}`,
+            {
+                clipPath:"polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+            },
+            {duration:0.5, ease:"easeInOut", type:"tween"}
+        )
+    }
     useEffect(() => {
         animate('img', {scale:1, x:0}, {delay:stagger(0.4), ease:"easeInOut", type:"spring", stiffness:60, damping:10})
     },[])
@@ -36,6 +45,7 @@ export default function ImageCards() {
                     initial={{scale:0, x:"400%"}}  
                     onHoverStart={() => animateHover("first")}
                     onHoverEnd={() => reverseHover("first")}
+                    onClick={() => handleClick("first")}
                     className="h-full w-1/3 img-slide rounded-lg" 
                     src="/augustus3.png" 
                 />
