@@ -7,7 +7,7 @@ export default function ImageCards() {
         animate(
             `#${id}`,
             {
-                clipPath:["polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)", " polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)"],
+                clipPath:["polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)", "  polygon(0 0, 50% 0, 50% 100%, 0 100%)"],
                 opacity: 1
             },
             {duration:0.5, ease:"easeInOut", type:"tween"}
@@ -17,7 +17,7 @@ export default function ImageCards() {
         animate(
             `#${id}`,
             {
-                clipPath:[ " polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)","polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",],
+                clipPath:"polygon(0% 0%, 0% 0%, 0% 100%, 0% 100%)",
                 opacity: 0
             },
             {duration:0.5, ease:"easeInOut", type:"tween"}
@@ -28,7 +28,7 @@ export default function ImageCards() {
     },[])
     return(
         <main className='relative h-screen w-screen'>
-            <motion.section initial={{opacity:0}} className='border-2 bg-orange-400 h-full w-1/2' id='first'>
+            <motion.section initial={{opacity:0}} className='border-2 bg-orange-400 h-full w-full' id='first'>
 
             </motion.section>
             <section className='absolute bottom-0 right-0 flex h-20 gap-2 m-5 overflow-hidden p-2 w-1/4'>

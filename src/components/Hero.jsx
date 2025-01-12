@@ -4,11 +4,7 @@ import { useEffect } from "react"
 
 export default function Hero() {
     useEffect(() => {
-        const sequence = [
-            [".roll-in", { y: "0%" }, { delay: stagger(0.2), ease: "easeInOut", type: "spring", stiffness: 60, damping: 10 }],
-            ["img", { x:"0%", scale:1}, { delay: stagger(0.2), ease: "easeInOut", type: "spring", stiffness: 20, damping: 10 }]
-        ]
-        animate(sequence)
+        animate(".roll-in", { y: "0%" }, { delay: stagger(0.2), ease: "easeInOut", type: "spring", stiffness: 60, damping: 10 })
     },[])
     return(
         <div className="h-screen w-screen grid place-items-center bg-[#E4E3E2]">
